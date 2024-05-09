@@ -1,0 +1,33 @@
+﻿@model List<Department>
+<a href="/Departments/create" type="button" class="btn btn-outline-warning mb-5">Add New Department</a>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach(var Results in Model)
+            {
+            <tr>
+
+                <td>@Results.Id</td>
+                <td>@Results.Name</td>
+                <td>
+                    <a href="/Departments/Detalis/@Results.Id" class="text-decoration-none btn btn-info"> Detalis</a>
+                    <a href="/Departments/Delete/@Results.Id" class="text-decoration-none btn btn-danger"> Delete</a>
+                    <a href="/Departments/Update/@Results.Id" class="text-decoration-none btn btn-success"> Update</a>
+
+                </td>
+            </tr>
+
+
+            }
+           
+      
+       
+    </tbody>
+</table>
